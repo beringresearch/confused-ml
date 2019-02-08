@@ -1,0 +1,6 @@
+README.md
+confused.egg-info/PKG-INFO
+confused.egg-info/SOURCES.txt
+confused.egg-info/dependency_links.txt
+confused.egg-info/requires.txt
+confused.egg-info/top_level.txt

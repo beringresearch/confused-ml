@@ -1,0 +1,1 @@
+from confused.squares import *

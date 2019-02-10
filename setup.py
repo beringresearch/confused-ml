@@ -2,8 +2,7 @@ from setuptools import setup
 
 setup(
     name="confused",
-    version='0.0.1-dev',
-    py_modules=['confused'],
+    version='0.0.1-dev',    
     install_requires=[
         'altair',
         'pandas'],    

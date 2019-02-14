@@ -6,7 +6,9 @@ setup(
     packages=['confused']  
     install_requires=[
         'altair',
-        'pandas'],    
+        'pandas',
+        'matplotlib',
+        'numpy'],    
     author='Bering',
     description='Confused: model performance visualisation',
     license='Apache License 2.0',

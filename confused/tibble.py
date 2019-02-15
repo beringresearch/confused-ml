@@ -4,7 +4,7 @@ import numpy as np
 
 def tibble(actual, predicted, ncol=10):
     df = []
-    for class_name in range(len(np.unique(actual))):
+    for class_name in np.unique(actual):
         actual_mask = actual == class_name
         predicted_f = np.sort(predicted[actual_mask])
         nrow = (len(predicted_f) // ncol)

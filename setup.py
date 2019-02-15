@@ -3,7 +3,7 @@ from setuptools import setup
 setup(
     name="confused",
     version='0.0.1-dev',
-    packages=['confused']  
+    packages=['confused'],
     install_requires=[
         'altair',
         'pandas',

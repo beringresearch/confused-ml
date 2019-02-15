@@ -2,13 +2,15 @@ from keras.models import Model
 import numpy as np
 import matplotlib.pyplot as plt
 
-def activis(model, x, layers, columns = 16):
+def activis(model, x, layers, columns = 16, cmap='viridis'):
     (x_dim, y_dim, ch) = x.shape
     query = x.reshape((1,) + (x_dim, y_dim, ch))
-    layers = [model.layers[l] for l in layers]
+    layers = layers if type(layers) is list else [layers]
+    layers = [model.layers[l] for l in list(layers)]
     layer_outputs = [layer.output for layer in layers]
     activation_model = Model(inputs=model.input, outputs=layer_outputs)
     activations = activation_model.predict(query)
+    activations = activations if type(activations)==list else [activations]
 
     layer_names = []
     for layer in layers:
@@ -34,8 +36,9 @@ def activis(model, x, layers, columns = 16):
                 display_grid[col * size : (col + 1) * size,
                              row * size : (row + 1) * size] = channel_image
         scale = 1. / size
-        plt.figure(figsize=(scale * display_grid.shape[1],
+        fig = plt.figure(figsize=(scale * display_grid.shape[1],
                             scale * display_grid.shape[0]))
         plt.title(layer_name)
         plt.grid(False)
-        plt.imshow(display_grid, aspect='auto', cmap='viridis')
+        plt.imshow(display_grid, aspect='auto', cmap=cmap)
+        plt.axis('off')

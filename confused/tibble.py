@@ -28,7 +28,7 @@ def tibble(actual, predicted, ncol=10):
                                    ticks=False,
                                    labels=False,
                                    title='')),
-    column = 'Class Index',
+    column=alt.Column('Class Index', title=''),
     color='Predicted Label:N',
     tooltip=['Predicted Label']).properties(width=ncol*6, height=nrow*8).configure_axis(grid=False, domainWidth=0).configure_view(strokeOpacity=0)
 

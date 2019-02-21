@@ -2,7 +2,7 @@ import altair as alt
 import pandas as pd
 
 def squares(proba, actual, predicted):
-    df = pd.DataFrame(proba)
+    df = pd.DataFrame(proba, copy = True)
     metadata = pd.DataFrame({'predicted':predicted, 'actual':actual})
     for col in df.columns:
         df[col][metadata['actual']!=col] = None

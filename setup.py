@@ -2,12 +2,11 @@ from setuptools import setup
 
 setup(
     name="confused",
-    version='0.0.2-dev',
+    version='0.0.3-dev',
     packages=['confused'],
     install_requires=[
         'altair',
-        'pandas',
-        'matplotlib',
+        'pandas',        
         'numpy'],    
     author='Bering',
     description='Confused: model performance visualisation',
